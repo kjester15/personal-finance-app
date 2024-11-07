@@ -15,7 +15,7 @@ class ImportsController < ApplicationController
     @import = current_user.imports.build(import_params)
 
     if @import.save
-      redirect_to imports_path(@import.id)
+      redirect_to import_path(@import.id)
     else
       render :new, status: :unprocessable_entity
     end
