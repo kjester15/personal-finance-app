@@ -1,7 +1,7 @@
 <div class="link-container">
   <% if user_signed_in? %>
     <div class="link">
-      <%= link_to "Home", imports_path %>
+      <%= link_to "Import File", imports_path %>
     </div>
     <div class="link">
       <%= link_to 'Logout', destroy_user_session_path, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
