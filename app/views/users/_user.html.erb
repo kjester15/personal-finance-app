@@ -1,15 +1,37 @@
 <div>
   <div>
+    <div>username:</div>
     <%= user.username %>
   </div>
-  <div>
+  <div class="data-container">
+    <div class="data-header-container">
+      <div class="data-header">Date</div>
+      <div class="data-header">Amount</div>
+      <div class="data-header">Card</div>
+      <div class="data-header">Vendor</div>
+      <div class="data-header">Category</div>
+      <div class="data-header">Import Name</div>
+    </div>
     <% user.imports.each do |row| %>
       <div class="data-row">
-        <%= row.date %>
-        <%= row.amount %>
-        <%= row.card %>
-        <%= row.vendor %>
-        <%= row.category %>
+        <div class="data-item">
+          <%= row.date %>
+        </div>
+        <div class="data-item">
+          <%= row.amount %>
+        </div>
+        <div class="data-item">
+          <%= row.card %>
+        </div>
+        <div class="data-item">
+          <%= row.vendor %>
+        </div>
+        <div class="data-item">
+          <%= row.category %>
+        </div>
+        <div class="data-item">
+          <%= row.name %>
+        </div>
       </div>
     <% end %>
   </div>

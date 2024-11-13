@@ -25,3 +25,14 @@
 .link {
   margin: 10px;
 }
+
+.data-header-container, .data-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  justify-items: center;
+}
+
+.data-header {
+  font-size: 18px;
+  font-weight: 700;
+}
