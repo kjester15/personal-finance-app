@@ -1,4 +1,5 @@
 <%= form_with model: @import, url: imports_path do |f| %>
-  <%= f.file_field :file %><br>
+  <%= f.file_field :file %><br><br>
+  <%= f.text_field :name, placeholder: "Import name?" %><br><br>
   <%= f.submit "Import" %>
 <% end %>

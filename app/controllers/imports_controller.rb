@@ -1,3 +1,5 @@
+require 'csv'
+
 class ImportsController < ApplicationController
   def index
     @imports = Import.all
@@ -12,12 +14,19 @@ class ImportsController < ApplicationController
   end
 
   def create
-    @import = current_user.imports.build(import_params)
+    CSV.foreach(import_params[:file], headers: true) do |row|
+      current_user.imports.create!(name: import_params[:name],
+                                   date: row[0],
+                                   amount: row[1],
+                                   card: row[2],
+                                   category: row[3],
+                                   vendor: row[4])
 
-    if @import.save
-      redirect_to import_path(@import.id)
-    else
-      render :new, status: :unprocessable_entity
+      # if @import.save
+      #   redirect_to import_path(@import.id)
+      # else
+      #   render :new, status: :unprocessable_entity
+      # end
     end
   end
 
@@ -44,6 +53,6 @@ class ImportsController < ApplicationController
   private
 
   def import_params
-    params.require(:import).permit(:file)
+    params.require(:import).permit(:file, :name)
   end
 end
