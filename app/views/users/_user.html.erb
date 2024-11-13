@@ -1,0 +1,16 @@
+<div>
+  <div>
+    <%= user.username %>
+  </div>
+  <div>
+    <% user.imports.each do |row| %>
+      <div class="data-row">
+        <%= row.date %>
+        <%= row.amount %>
+        <%= row.card %>
+        <%= row.vendor %>
+        <%= row.category %>
+      </div>
+    <% end %>
+  </div>
+</div>
