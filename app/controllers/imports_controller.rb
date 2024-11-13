@@ -21,13 +21,13 @@ class ImportsController < ApplicationController
                                    card: row[2],
                                    category: row[3],
                                    vendor: row[4])
-
       # if @import.save
       #   redirect_to import_path(@import.id)
       # else
       #   render :new, status: :unprocessable_entity
       # end
     end
+    render :new
   end
 
   # def edit
