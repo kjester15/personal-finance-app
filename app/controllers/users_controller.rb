@@ -5,7 +5,8 @@ class UsersController < ApplicationController
 
   def show
     @user = current_user
-    @categories = @user.imports.select(:category).distinct
-    @dates = @user.imports.select(:date).distinct.sort
+    @categories = current_user.imports.select(:category).distinct.order(category: :asc)
+    @dates = @user.imports.select(:date).distinct.order(date: :asc)
+    @vendors = @user.imports.select(:vendor).distinct.order(vendor: :asc)
   end
 end

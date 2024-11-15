@@ -35,6 +35,22 @@
         <% end %>
       </div>
     </div>
+    <div class="data-vendor">
+      <div class="data-vendor-header">
+        <div class="data-header">Vendor</div>
+        <div class="data-header">Amount</div>
+      </div>
+      <div class="data-vendor-body">
+        <% @vendors.each do |elem| %>
+          <div class="data-item">
+            <%= elem.vendor %>
+          </div>
+          <div class="data-item">
+            <%= current_user.imports.where(vendor: elem.vendor).sum(:amount).round(2) %>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
   <div class="data-container">
     <div class="data-detail-header">
