@@ -26,7 +26,13 @@
   margin: 10px;
 }
 
-.data-header-container, .data-row {
+.data-category-header, .data-category-row {
+  display: grid;
+  grid-template-columns: 300px 300px;
+  justify-items: center;
+}
+
+.data-detail-header, .data-detail-row {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   justify-items: center;
