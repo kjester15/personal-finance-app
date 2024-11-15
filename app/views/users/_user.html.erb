@@ -3,19 +3,37 @@
     <div>username: <%= user.username %> </div>
   </div>
   <div class="data-visualization">
-    <div class="data-category-header">
-      <div class="data-header">Category</div>
-      <div class="data-header">Amount</div>
+    <div class="data-category">
+      <div class="data-category-header">
+        <div class="data-header">Category</div>
+        <div class="data-header">Amount</div>
+      </div>
+      <div class="data-category-body">
+        <% @categories.each do |elem| %>
+          <div class="data-item">
+            <%= elem.category %>
+          </div>
+          <div class="data-item">
+            <%= current_user.imports.where(category: elem.category).sum(:amount).round(2) %>
+          </div>
+        <% end %>
+      </div>
     </div>
-    <div class="data-category-row">
-      <% @categories.each do |elem| %>
-        <div class="data-item">
-          <%= elem.category %>
-        </div>
-        <div class="data-item">
-          <%= current_user.imports.where(category: elem.category).sum(:amount).round(2) %>
-        </div>
-      <% end %>
+    <div class="data-date">
+      <div class="data-date-header">
+        <div class="data-header">Date</div>
+        <div class="data-header">Amount</div>
+      </div>
+      <div class="data-date-body">
+        <% @dates.each do |elem| %>
+          <div class="data-item">
+            <%= elem.date %>
+          </div>
+          <div class="data-item">
+            <%= current_user.imports.where(date: elem.date).sum(:amount).round(2) %>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
   <div class="data-container">

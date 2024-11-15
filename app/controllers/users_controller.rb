@@ -6,6 +6,6 @@ class UsersController < ApplicationController
   def show
     @user = current_user
     @categories = @user.imports.select(:category).distinct
-    @total = @user.imports.sum(:amount)
+    @dates = @user.imports.select(:date).distinct.sort
   end
 end

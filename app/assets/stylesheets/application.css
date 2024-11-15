@@ -26,9 +26,9 @@
   margin: 10px;
 }
 
-.data-category-header, .data-category-row {
+.data-category-header, .data-category-body, .data-date-header, .data-date-body {
   display: grid;
-  grid-template-columns: 300px 300px;
+  grid-template-columns: minmax(150px, 1fr) minmax(150px, 1fr);
   justify-items: center;
 }
 
@@ -41,4 +41,8 @@
 .data-header {
   font-size: 18px;
   font-weight: 700;
+}
+
+.data-visualization {
+  display: flex;
 }
