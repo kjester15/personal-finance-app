@@ -51,6 +51,22 @@
         <% end %>
       </div>
     </div>
+    <div class="data-card">
+      <div class="data-card-header">
+        <div class="data-header">Card</div>
+        <div class="data-header">Amount</div>
+      </div>
+      <div class="data-card-body">
+        <% @cards.each do |elem| %>
+          <div class="data-item">
+            <%= elem.card %>
+          </div>
+          <div class="data-item">
+            <%= current_user.imports.where(card: elem.card).sum(:amount).round(2) %>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
   <div class="data-container">
     <div class="data-detail-header">
