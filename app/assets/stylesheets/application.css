@@ -28,14 +28,14 @@
 
 .data-category-header, .data-category-body, .data-date-header, .data-date-body, .data-vendor-header, .data-vendor-body, .data-card-header, .data-card-body{
   display: grid;
-  grid-template-columns: minmax(150px, 1fr) minmax(150px, 1fr);
-  justify-items: center;
+  grid-template-columns: minmax(150px, 1fr) minmax(100px, 1fr);
+  justify-items: start;
 }
 
 .data-detail-header, .data-detail-row {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  justify-items: center;
+  justify-items: start;
 }
 
 .data-header {
