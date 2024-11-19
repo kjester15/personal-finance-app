@@ -1,5 +1,8 @@
 <div class="link-container">
   <% if user_signed_in? %>
+    <div>
+      username: <%= current_user.username %>
+    </div>
     <div class="link">
       <%= link_to "Import File", new_import_path %>
     </div>
