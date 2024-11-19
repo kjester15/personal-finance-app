@@ -14,7 +14,7 @@
             <%= elem.category %>
           </div>
           <div class="data-item">
-            <%= current_user.imports.where(category: elem.category).sum(:amount).round(2) %>
+            <%= number_to_currency(current_user.imports.where(category: elem.category).sum(:amount)) %>
           </div>
         <% end %>
       </div>
@@ -30,7 +30,7 @@
             <%= elem.date %>
           </div>
           <div class="data-item">
-            <%= current_user.imports.where(date: elem.date).sum(:amount).round(2) %>
+            <%= number_to_currency(current_user.imports.where(date: elem.date).sum(:amount)) %>
           </div>
         <% end %>
       </div>
@@ -46,7 +46,7 @@
             <%= elem.vendor %>
           </div>
           <div class="data-item">
-            <%= current_user.imports.where(vendor: elem.vendor).sum(:amount).round(2) %>
+            <%= number_to_currency(current_user.imports.where(vendor: elem.vendor).sum(:amount)) %>
           </div>
         <% end %>
       </div>
@@ -62,7 +62,7 @@
             <%= elem.card %>
           </div>
           <div class="data-item">
-            <%= current_user.imports.where(card: elem.card).sum(:amount).round(2) %>
+            <%= number_to_currency(current_user.imports.where(card: elem.card).sum(:amount)) %>
           </div>
         <% end %>
       </div>
@@ -83,7 +83,7 @@
           <%= row.date %>
         </div>
         <div class="data-item">
-          <%= row.amount %>
+          <%= number_to_currency(row.amount) %>
         </div>
         <div class="data-item">
           <%= row.card %>
