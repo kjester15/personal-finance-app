@@ -1,4 +1,10 @@
 <div>
+  <div>
+    <%= form_with model: @import, url: imports_path do |f| %>
+      <%= select_tag(:id, options_for_select([@options])) %>
+      <%= f.submit "Run Reporting" %>
+    <% end %>
+  </div>
   <div class="data-visualization">
     <div class="data-category">
       <div class="data-category-header">
