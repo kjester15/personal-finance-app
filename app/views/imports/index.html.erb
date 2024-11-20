@@ -1,0 +1,5 @@
+<div>
+  <% @imports.each do |import| %>
+    <%= link_to import.name, import_path(import.name) %><br>
+  <% end %>
+</div>

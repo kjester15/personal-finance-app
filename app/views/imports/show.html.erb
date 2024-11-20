@@ -1,1 +1,100 @@
-<div>import data here<div>
+<div>
+  <div class="data-visualization">
+    <div class="data-category">
+      <div class="data-category-header">
+        <div class="data-header">Category</div>
+        <div class="data-header">Amount</div>
+      </div>
+      <div class="data-category-body">
+        <% @categories.each do |elem| %>
+          <div class="data-item">
+            <%= elem.category %>
+          </div>
+          <div class="data-item">
+            <%= number_to_currency(@imports.where(category: elem.category).sum(:amount)) %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="data-date">
+      <div class="data-date-header">
+        <div class="data-header">Date</div>
+        <div class="data-header">Amount</div>
+      </div>
+      <div class="data-date-body">
+        <% @dates.each do |elem| %>
+          <div class="data-item">
+            <%= elem.date %>
+          </div>
+          <div class="data-item">
+            <%= number_to_currency(@imports.where(date: elem.date).sum(:amount)) %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="data-vendor">
+      <div class="data-vendor-header">
+        <div class="data-header">Vendor</div>
+        <div class="data-header">Amount</div>
+      </div>
+      <div class="data-vendor-body">
+        <% @vendors.each do |elem| %>
+          <div class="data-item">
+            <%= elem.vendor %>
+          </div>
+          <div class="data-item">
+            <%= number_to_currency(@imports.where(vendor: elem.vendor).sum(:amount)) %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="data-card">
+      <div class="data-card-header">
+        <div class="data-header">Card</div>
+        <div class="data-header">Amount</div>
+      </div>
+      <div class="data-card-body">
+        <% @cards.each do |elem| %>
+          <div class="data-item">
+            <%= elem.card %>
+          </div>
+          <div class="data-item">
+            <%= number_to_currency(@imports.where(card: elem.card).sum(:amount)) %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="data-container">
+    <div class="data-detail-header">
+      <div class="data-header">Date</div>
+      <div class="data-header">Amount</div>
+      <div class="data-header">Card</div>
+      <div class="data-header">Vendor</div>
+      <div class="data-header">Category</div>
+      <div class="data-header">Import Name</div>
+    </div>
+    <% @imports.each do |row| %>
+      <div class="data-detail-row">
+        <div class="data-item">
+          <%= row.date %>
+        </div>
+        <div class="data-item">
+          <%= number_to_currency(row.amount) %>
+        </div>
+        <div class="data-item">
+          <%= row.card %>
+        </div>
+        <div class="data-item">
+          <%= row.vendor %>
+        </div>
+        <div class="data-item">
+          <%= row.category %>
+        </div>
+        <div class="data-item">
+          <%= row.name %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

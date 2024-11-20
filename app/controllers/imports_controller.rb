@@ -2,11 +2,15 @@ require 'csv'
 
 class ImportsController < ApplicationController
   def index
-    @imports = Import.all
+    @imports = Import.select(:name).distinct.order(name: :asc)
   end
 
   def show
-    @import = Import.find(params[:id])
+    @imports = Import.where(user: current_user, name: params[:id])
+    @categories = @imports.select(:category).distinct.order(category: :asc)
+    @dates = @imports.select(:date).distinct.order(date: :asc)
+    @vendors = @imports.select(:vendor).distinct.order(vendor: :asc)
+    @cards = @imports.select(:card).distinct.order(card: :asc)
   end
 
   def new
