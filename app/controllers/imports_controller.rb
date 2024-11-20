@@ -31,7 +31,7 @@ class ImportsController < ApplicationController
       #   render :new, status: :unprocessable_entity
       # end
     end
-    render :new
+    redirect_to import_path(import_params[:name])
   end
 
   # def edit
