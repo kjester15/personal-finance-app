@@ -94,6 +94,9 @@
         <div class="data-item">
           <%= row.name %>
         </div>
+        <div class="data-item">
+          <%= link_to "Edit", edit_import_path(row.id) %>
+        </div>
       </div>
     <% end %>
   </div>

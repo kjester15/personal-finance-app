@@ -34,7 +34,7 @@
 
 .data-detail-header, .data-detail-row {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: minmax(50px, 150px) minmax(50px, 150px) minmax(50px, 150px) minmax(50px, 300px) minmax(50px, 200px) minmax(50px, 150px) 50px;
   justify-items: start;
 }
 
@@ -45,4 +45,8 @@
 
 .data-visualization {
   display: flex;
+}
+
+#sticky {
+  position: sticky;
 }
