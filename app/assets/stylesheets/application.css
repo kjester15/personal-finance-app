@@ -1,21 +1,11 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+* {
+  margin: 0;
+  padding: 0;
+}
+
 .link-container, .header {
   display: flex;
-  background-color: aliceblue;
+  background-color: rgb(150, 206, 255);
 }
 
 .header {
@@ -26,10 +16,20 @@
   margin: 10px;
 }
 
-.data-category-header, .data-category-body, .data-date-header, .data-date-body, .data-vendor-header, .data-vendor-body, .data-card-header, .data-card-body{
+.data-overview-header {
+  background-color: rgb(204, 231, 255);
+}
+
+.data-overview-header, .data-overview-body{
   display: grid;
   grid-template-columns: minmax(150px, 1fr) minmax(100px, 1fr);
   justify-items: start;
+}
+
+.data-detail-header {
+  position: sticky;
+  top: 0px;
+  background-color: rgb(204, 231, 255);
 }
 
 .data-detail-header, .data-detail-row {
@@ -45,8 +45,4 @@
 
 .data-visualization {
   display: flex;
-}
-
-#sticky {
-  position: sticky;
 }

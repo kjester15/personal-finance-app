@@ -1,11 +1,11 @@
 <div>
   <div class="data-visualization">
     <div class="data-category">
-      <div class="data-category-header">
+      <div class="data-overview-header">
         <div class="data-header">Category</div>
         <div class="data-header">Amount</div>
       </div>
-      <div class="data-category-body">
+      <div class="data-overview-body">
         <% @categories.each do |elem| %>
           <div class="data-item">
             <%= elem.category %>
@@ -17,11 +17,11 @@
       </div>
     </div>
     <div class="data-date">
-      <div class="data-date-header">
+      <div class="data-overview-header">
         <div class="data-header">Date</div>
         <div class="data-header">Amount</div>
       </div>
-      <div class="data-date-body">
+      <div class="data-overview-body">
         <% @dates.each do |elem| %>
           <div class="data-item">
             <%= elem.date %>
@@ -33,11 +33,11 @@
       </div>
     </div>
     <div class="data-vendor">
-      <div class="data-vendor-header">
+      <div class="data-overview-header">
         <div class="data-header">Vendor</div>
         <div class="data-header">Amount</div>
       </div>
-      <div class="data-vendor-body">
+      <div class="data-overview-body">
         <% @vendors.each do |elem| %>
           <div class="data-item">
             <%= elem.vendor %>
@@ -49,11 +49,11 @@
       </div>
     </div>
     <div class="data-card">
-      <div class="data-card-header">
+      <div class="data-overview-header">
         <div class="data-header">Card</div>
         <div class="data-header">Amount</div>
       </div>
-      <div class="data-card-body">
+      <div class="data-overview-body">
         <% @cards.each do |elem| %>
           <div class="data-item">
             <%= elem.card %>
