@@ -34,19 +34,19 @@ class ImportsController < ApplicationController
     redirect_to import_path(import_params[:name])
   end
 
-  # def edit
-  #   @import = Import.find(params[:id])
-  # end
+  def edit
+    @import = Import.find(params[:id])
+  end
 
-  # def update
-  #   @import = Import.find(params[:id])
+  def update
+    @import = Import.find(params[:id])
 
-  #   if @import.update(import_params)
-  #     redirect_to posts_path(@import.id)
-  #   else
-  #     render :new, status: :unprocessable_entity
-  #   end
-  # end
+    if @import.update(import_params)
+      redirect_to import_path(@import.name)
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
 
   def destroy
     @import = Import.find(params[:id])
@@ -57,6 +57,6 @@ class ImportsController < ApplicationController
   private
 
   def import_params
-    params.require(:import).permit(:file, :name)
+    params.require(:import).permit(:file, :name, :category, :date, :vendor, :card, :amount)
   end
 end

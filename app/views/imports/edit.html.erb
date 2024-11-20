@@ -1,0 +1,13 @@
+<%= form_with model: @import do |f| %>
+  <%= "Date: "%><br>
+  <%= f.text_field :date, placeholder: @import.date %><br>
+  <%= "Amount: "%><br>
+  <%= f.number_field :amount, placeholder: @import.amount %><br>
+  <%= "Card: "%><br>
+  <%= f.text_field :card, placeholder: @import.card %><br>
+  <%= "Vendor: "%><br>
+  <%= f.text_field :vendor, placeholder: @import.vendor %><br>
+  <%= "Category: "%><br>
+  <%= f.text_field :category, placeholder: @import.category %><br><br>
+  <%= f.submit "Update" %>
+<% end %>
