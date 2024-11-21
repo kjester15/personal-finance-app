@@ -17,13 +17,19 @@
 }
 
 .data-overview-header {
-  background-color: rgb(204, 231, 255);
+  background-color: rgb(184, 222, 255);
 }
 
 .data-overview-header, .data-overview-body{
   display: grid;
-  grid-template-columns: minmax(150px, 1fr) minmax(100px, 1fr);
+  grid-template-columns: minmax(150px, 1fr) 150px;
   justify-items: start;
+}
+
+.data-category, .data-date, .data-vendor, .data-card {
+  margin: 10px;
+  padding: 10px;
+  background-color: rgb(222, 240, 255);
 }
 
 .data-detail-header {
@@ -45,4 +51,6 @@
 
 .data-visualization {
   display: flex;
+  justify-content: center;
+  align-items: start;
 }
